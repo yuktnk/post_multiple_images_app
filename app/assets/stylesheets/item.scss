@@ -1,3 +1,98 @@
-// Place all the styles related to the item controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.Main{
+  min-height: 1080px;
+  width: 100vw;
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  .FormArea {
+    width: 640px;
+    background-color: white;
+    margin: 80px;
+    // padding: 80px;
+    &__title {
+      font-size: x-large;
+      padding: 16px;
+      border-bottom: 1px solid #f4f4f4;
+    }
+    &__input {
+      padding: 16px;
+      &__images {
+        padding: 16px 0;
+        text-align: left;
+        margin-bottom: 48px;
+        .Subtitle {
+          font-size: large;
+          .Require {
+            color: white;
+            background-color: lightblue;
+            padding: 2px
+          }
+        }
+        #image-box-1 {
+          background-color: #f4f4f4;
+          height: 160px;
+        }
+        
+      }
+      &__name {
+        text-align: left;
+        margin-bottom: 48px;
+        .Subtitle {
+          font-size: large;
+          .Require {
+            color: white;
+            background-color: lightblue;
+            padding: 2px
+          }
+          .NameInput {
+            border-color: lightblue;
+            height: 40px;
+            width: 100%;
+          }
+        }
+      }
+      &__submitBtn {
+        margin-bottom: 24px;
+        .BlueBtn {
+          height: 40px;
+          width: 100%;
+          color: white;
+          background-color: lightblue;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+  // %section.FormArea
+  //   = form_with model:@item, local:true do |f|
+  //     %h2.FormArea__title
+  //       新規商品出品フォーム
+  //     .FormArea__input
+  //       .FormArea__input__images
+  //         %h3.Subtitle
+  //           出品画像
+  //           %span.Require 必須
+  //         %p 最大10枚までアップロードできます
+  //         #image-box-1
+  //           .item-num-0#image-box__container
+  //             = f.fields_for :images do |i|
+  //               .InputImages
+  //                 = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+  //                 %label{for: "img-file"}
+  //                   %i.fas.fa-camera
+
+  //       .FormArea__input__name
+  //         .Subtitle
+  //           %label
+  //             商品名
+  //             %span.Require 必須
+  //           %div
+  //             = f.text_field :name, placeholder:"商品名（必須 40文字まで)",class: "form__group__name"
+
+  //       .FormArea__input__submitBtn
+  //         %div
+  //           = f.submit "出品する",class: "btn-default__btn-red"
