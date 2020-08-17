@@ -4,6 +4,7 @@
       %h2.FormArea__title
         新規商品出品フォーム
       .FormArea__input
+
         .FormArea__input__images
           %h3.Subtitle
             出品画像
@@ -13,7 +14,7 @@
             .item-num-0#image-box__container
               = f.fields_for :images do |i|
                 .InputImages
-                  = i.file_field :src, type: 'file', name: "item[images_attributes][][src]", value:"", style: "display:none", id:"img-file"
+                  = i.file_field :src, type: 'file', name: "item[images_attributes][][src]", value:"", id:"img-file"#, style: "display:none"
                   %label{for: "img-file"}
                     = icon('fas', 'camera')
         .FormArea__input__name
